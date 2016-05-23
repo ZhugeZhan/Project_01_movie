@@ -1,0 +1,31 @@
+//
+//  Movie.pch
+//  Movie
+//
+//  Created by apple on 16/3/29.
+//  Copyright © 2016年 zhuge. All rights reserved.
+//
+
+#ifndef Movie_pch
+#define Movie_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIImageView+WebCache.h"
+#import "UIView+ViewController.h"
+#import "UIViewExt.h"
+#import "MBProgressHUD.h"
+
+#import "WXDataService.h"
+
+//播放视频的两个AV框架
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
+
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+
+#define kTableViewSeColor [UIColor colorWithWhite:0.32 alpha:1]
+
+#endif /* Movie_pch */

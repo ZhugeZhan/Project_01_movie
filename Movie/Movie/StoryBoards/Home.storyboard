@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cLt-91-ddC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="7FE-JR-9kq">
+            <objects>
+                <navigationController id="cLt-91-ddC" customClass="BaseNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="GzA-mB-QLZ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S3S-gq-Toy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OaY-R4-ruU" kind="relationship" relationship="rootViewController" id="70W-2I-Ww7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IvW-W1-1Ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-318" y="-1020"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="cgU-Xw-jGv">
+            <objects>
+                <viewController id="OaY-R4-ruU" customClass="HomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="no2-uc-vY9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Exp-l1-25q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yH0-Ba-Yo9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkV-BH-JBR" customClass="PostView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Z6-ke-Hsv">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OaY-R4-ruU" id="VVg-cd-lSn"/>
+                                    <outlet property="delegate" destination="OaY-R4-ruU" id="sDU-0m-hqv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dkV-BH-JBR" firstAttribute="leading" secondItem="yH0-Ba-Yo9" secondAttribute="leadingMargin" constant="-20" id="2Hj-Hr-h1r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dkV-BH-JBR" secondAttribute="trailing" constant="-20" id="76n-fY-YZw"/>
+                            <constraint firstItem="Exp-l1-25q" firstAttribute="top" secondItem="5Z6-ke-Hsv" secondAttribute="bottom" id="Dpb-kK-x2n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Z6-ke-Hsv" secondAttribute="trailing" constant="-20" id="Dye-2R-tUR"/>
+                            <constraint firstItem="dkV-BH-JBR" firstAttribute="top" secondItem="no2-uc-vY9" secondAttribute="bottom" id="gL4-14-MYl"/>
+                            <constraint firstItem="5Z6-ke-Hsv" firstAttribute="top" secondItem="no2-uc-vY9" secondAttribute="bottom" id="gbd-lF-S3e"/>
+                            <constraint firstItem="Exp-l1-25q" firstAttribute="top" secondItem="dkV-BH-JBR" secondAttribute="bottom" id="rup-Vo-CBn"/>
+                            <constraint firstItem="5Z6-ke-Hsv" firstAttribute="leading" secondItem="yH0-Ba-Yo9" secondAttribute="leadingMargin" constant="-20" id="wGj-SX-Hzt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OvQ-NW-2FF"/>
+                    <connections>
+                        <outlet property="_listView" destination="5Z6-ke-Hsv" id="gr3-ey-g6f"/>
+                        <outlet property="_posterView" destination="dkV-BH-JBR" id="suF-4h-HU8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZeT-Dj-MLv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="-1020"/>
+        </scene>
+    </scenes>
+</document>
